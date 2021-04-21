@@ -111,10 +111,39 @@ def BFS_v2(G, s):
                 neighbor.set_color('g')
                 queue.append(neighbor)
         
-
 #2. Depth First Search
+#2.1 DFS using mark array
+def DFS_v1(G,s):
+    vertex = G[0]
+    edges = G[1]
+
+    #Initialize the Stack 
+    stack = []
+
+    #Create the mark array
+    mark = [False for i in range(len(vertex))]
+
+    #Start at the given index 
+    start = vertex[s]
+    stack.append(start)
+
+    while len(stack) != 0:
+        current = stack.pop()
+        print(current)
+        if mark[vertex.index(current)] == False:
+            mark[vertex.index(current)] = True
+            neighbors = [item[1] for item in edges if item[0] == current]
+            for neighbor in neighbors:
+                if mark[vertex.index(neighbor)] == False:
+                    stack.append(neighbor)
+
+#2.2 DFS using recursion
+def DFS_v2(G,s):
+    pass
 
 #3. Depth First Search for Tree/Forest
+
+
 
 #4. Topological Sorting
 
@@ -131,6 +160,8 @@ def main():
     # BFS_v1(G, 0)
 
     #Second implementation used class nodes
-    BFS_v2(G,0)
+    #BFS_v2(G,0)
 
+    #First implementation used DFS v2
+    DFS_v1(G,0)
 main()
