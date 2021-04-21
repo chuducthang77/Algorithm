@@ -155,7 +155,54 @@ def DFS_v2(G,s):
     DFS_helper(G, s, mark, edges, vertex)
 
 #3. Depth First Search for Tree/Forest
-print('hello')
+class Node:
+    def __init__(self, name, parent, color):
+        self.name = name
+        self.dtime = None
+        self.parent = parent
+        self.ftime = None
+        self.color = color
+        self.neighbor = []
+
+def DFS_visit(G, u, time):
+    time += 1
+    u.dtime = time
+    u.color = 'g'
+    for neighbor in u.neighbor:
+        if neighbor.color == 'w':
+            neighbor.parent = u
+            time = DFS_visit(G, neighbor, time)
+    u.color = 'b'
+    time += 1
+    u.ftime = time
+
+    return time
+
+def DFS_v3(G):
+    vertex = G[0]
+    edges = G[1]
+
+    #Create instance for each node
+    vertex_class = []
+    for vertice in vertex:
+        vertice_class = Node(vertice,None, 'w')
+        vertex_class.append(vertice_class)
+
+    #Find the neighbor for each node
+    for vertice_class in vertex_class:
+        for edge in edges:
+            if vertice_class.name == edge[0]:
+                index = vertex.index(edge[1])
+                vertice_class.neighbor.append(vertex_class[index])
+
+    #Initiate the time to be 0
+    time = 0
+    for vertice_class in vertex_class:
+        if vertice_class.color == 'w':
+            DFS_visit(G, vertice_class, time) 
+
+    for vertice_class in vertex_class:
+        print(vertice_class.name + ': ' + str(vertice_class.dtime) + '-' + str(vertice_class.ftime))
 
 #4. Topological Sorting
 
@@ -175,11 +222,11 @@ def main():
     #BFS_v2(G,0)
 
     #First implementation used DFS v1
-    print('algo 1')
-    DFS_v1(G,0)
+    # DFS_v1(G,0)
     
-    print('algo 2')
     #Second implementation used DFS v2
-    DFS_v2(G,0)
+    # DFS_v2(G,0)
 
+    #Third implementation used DFS v3 for tree/forest
+    DFS_v3(G)
 main()
