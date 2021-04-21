@@ -8,4 +8,4 @@ CMPUT204:
 - Data structures: AVL Tree, Binary Search Tree, Hash table
 - Dynamic Programming: Rod cutting, 0-1 knapsack problems, matrix chain multiplication, longest common sequence, computing bionomial coeffcients
 - Greedy algorithm: Fractional knapsack, task scheduling, activity selection
-- Graph algorithm: 
+- Graph algorithm: BFS, DFS, DFS for trees/forest, Topological Sorting, Minimum Spanning Tree
