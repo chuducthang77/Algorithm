@@ -138,11 +138,23 @@ def DFS_v1(G,s):
                     stack.append(neighbor)
 
 #2.2 DFS using recursion
+def DFS_helper(G,s,mark,edges, vertex):
+    mark[s] = True
+    print(vertex[s])
+    neighbors = [item[1] for item in edges if item[0] == vertex[s]]
+    for neighbor in neighbors:
+        if mark[vertex.index(neighbor)] == False:
+            DFS_helper(G, vertex.index(neighbor), mark, edges, vertex)
+
 def DFS_v2(G,s):
-    pass
+    vertex = G[0]
+    edges = G[1]
+
+    mark = [False for i in range(len(vertex))]
+
+    DFS_helper(G, s, mark, edges, vertex)
 
 #3. Depth First Search for Tree/Forest
-
 
 
 #4. Topological Sorting
@@ -162,6 +174,12 @@ def main():
     #Second implementation used class nodes
     #BFS_v2(G,0)
 
-    #First implementation used DFS v2
+    #First implementation used DFS v1
+    print('algo 1')
     DFS_v1(G,0)
+    
+    print('algo 2')
+    #Second implementation used DFS v2
+    DFS_v2(G,0)
+
 main()
