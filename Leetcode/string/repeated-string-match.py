@@ -4,7 +4,7 @@ def repeatedStringMatch(a, b):
     :type b: str
     :rtype: int
     """
-    #TODO: Understand why this method is working
+    #TODO: Understand why this method is working, Redo it in the future
 
     i = int(len(b)/len(a)) + 1
     if b in a*(i-1):
