@@ -1,3 +1,4 @@
+#TODO: Review this algorithm
 def searchInsert(nums, target):
     """
     :type nums: List[int]
