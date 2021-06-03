@@ -14,3 +14,5 @@ def sumOfUnique(nums):
             uniqueList.append(nums[i])
 
     return sum(uniqueList)
+
+print(sumOfUnique([1,2,3,2,5]))

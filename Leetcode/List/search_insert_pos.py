@@ -10,11 +10,9 @@ def searchInsert(nums, target):
 
     if nums[pos] == target:
         return pos
-    elif len(nums) == 1:
-        return pos + 1 
     elif nums[pos] > target:
         return pos - searchInsert(nums[:pos], target) - 1
     else:
         return pos + searchInsert(nums[pos+1:], target) + 1
 
-print(searchInsert([1], 0))
+print(searchInsert([1, 2, 3, 6], 1))
