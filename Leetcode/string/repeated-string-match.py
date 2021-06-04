@@ -1,3 +1,4 @@
+#Instructions: return how many times string a needs to repeat in order for string b to be a substring of string a. If not possible, return -1
 def repeatedStringMatch(a, b):
     """
     :type a: str

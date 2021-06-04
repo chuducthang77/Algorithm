@@ -1,4 +1,5 @@
 # Definition for singly-linked list.
+#Instructions: Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val

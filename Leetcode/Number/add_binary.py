@@ -1,4 +1,4 @@
-
+#Instructions: Add 2 binary numbers and return binary numbers
 def addBinary(a, b):
     array_a = list(a)
     array_b = list(b)

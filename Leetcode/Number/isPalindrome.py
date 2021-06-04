@@ -1,3 +1,4 @@
+#Instructions: Check if the number is a palindrome
 def isPalindrome(x):
     xList = list(str(x))
     xReverse = []

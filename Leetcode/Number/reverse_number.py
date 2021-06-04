@@ -1,5 +1,5 @@
 #TODO: Ask James about this one
-
+#Instructions: Reverse the number 
 def reverse(x):
     """
     :type x: int

@@ -1,3 +1,4 @@
+#Instructions: Count the number of subarray with its product strictly less than K
 def numSubarrayProductLessThanK(nums, k):
     """
     :type nums: List[int]

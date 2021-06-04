@@ -1,3 +1,4 @@
+#Instructions: Return the length of the last word
 def lengthOfLastWord(s):
         """
         :type s: str

@@ -1,3 +1,4 @@
+#Instructions: Calculate the sum of unique elements in nums array
 def sumOfUnique(nums):
     """
     :type nums: List[int]

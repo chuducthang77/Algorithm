@@ -1,4 +1,5 @@
 #TODO: Review this algorithm
+#Instructions: Search and return the position where the target will be inserted. If target is already inside the nums, return its position. Otherwise, return the position of insertion such that nums is still an increasing array
 def searchInsert(nums, target):
     """
     :type nums: List[int]

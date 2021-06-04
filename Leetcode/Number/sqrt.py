@@ -1,3 +1,4 @@
+#Instructions: Return the sqrt of the number
 def mySqrt(x):
     i = 0
     while True:
