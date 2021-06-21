@@ -1,3 +1,4 @@
+#Instructions: Return whether the there are any sums from root to leaf equal to targetSum
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
