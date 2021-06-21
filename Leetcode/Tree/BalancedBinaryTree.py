@@ -13,8 +13,24 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        def balanceFactor(root):
-            balance = []
-            if root:
-                balanceFactor(root.right)
+        left = 0
+        right = 0
+        if root == None:
+            return 1
+        if root.left:
+            left = self.isBalanced(root.left)
+            if left == 0:
+                return 0
+        if root.right:
+            right = self.isBalanced(root.right)
+            if right == 0:
+                return 0
+        if left - right > 1 or right - left > 1:
+            return 0
+        else:
+            if left > right:
+                return left + 1
+            else:
+                return right + 1
+                
 solution = Solution()
