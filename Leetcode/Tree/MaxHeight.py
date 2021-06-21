@@ -13,26 +13,28 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        if root:
-            height = 0
-            
-            left = self.maxDepth(root.left)
-            right = self.maxDepth(root.right)
-            
-            if left == None and right == None:
-                return height + 1
-            elif left == None and right != None:
-                height += right
-            elif right == None and left != None:
-                height += left
-            if left > right:
-                height += left
-            else:
-                height += right
-                
-            return height + 1
+        def depth(root):
+            left = 0
+            right = 0
+            arr = []
+            if root.left:
+                left = depth(root.left)
+                for i in range(len(left)):
+                    left[i] += 1
+                arr += left
+            if root.right:
+                right = depth(root.right)
+                for i in range(len(right)):
+                    right[i] += 1
+                arr += right
+            if left == right == 0:
+                return [1]
+            return arr
         
-        return None 
+        if root == None:
+            return 0
+        dep = depth(root)
+        return max(dep)
 
 root = TreeNode()
 left = TreeNode(None)

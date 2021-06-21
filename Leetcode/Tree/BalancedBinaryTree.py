@@ -24,7 +24,7 @@ class Solution(object):
         if root.right:
             right = self.isBalanced(root.right)
             if right == 0:
-                return 0
+                return 0 
         if left - right > 1 or right - left > 1:
             return 0
         else:
@@ -32,5 +32,5 @@ class Solution(object):
                 return left + 1
             else:
                 return right + 1
-                
+
 solution = Solution()
